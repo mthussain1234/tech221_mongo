@@ -1,6 +1,6 @@
 # tech221_mongo
 
-### Configuring multiple VMs
+## Configuring multiple VMs
 
 ![image](https://user-images.githubusercontent.com/129314018/233058390-c20d1c24-bfd4-4dba-b464-cd479fe4556d.png)
 
@@ -15,29 +15,38 @@
 
 ![image](https://user-images.githubusercontent.com/129314018/233074885-9255bbe7-b536-4394-bd8f-fc4366eeff62.png)
 
-
-![image](https://user-images.githubusercontent.com/129314018/233080068-f67bde54-a1ab-449a-8f82-5ae186132f36.png)
-![image](https://user-images.githubusercontent.com/129314018/233080546-31bf9e27-b906-4430-aa66-6327a814e229.png)
-
-
-### Provisioning MongoDB
+## Provisioning MongoDB
 
 1.  We create a new provision file for our db virtual machine, we name it `provisiondb.sh` and the contents are shown below :
 
 ```
+# updates the package list on the Ubuntu system and installs the latest version of all packages.
+
 sudo apt update -y
 
+# upgrades all installed packages to the latest version.
+
 sudo apt upgrade -y
+
+# adds  MongoDB  key so we can authenticate packages from MongoDB repository
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
 
+# adds the MongoDB repository to the system's list of repositories
+
 echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+# We now update and upgrade again but now this includes the MongoDB repository and MongoDB to latest version
 
 sudo apt update -y
 
 sudo apt upgrade -y
 
+# installs the MongoDB package and its associated components, including the server, shell, router, and tools
+
 sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+
+# starts the MongoDB service so that it is running on the system.
 
 sudo systemctl start mongod
 ```
