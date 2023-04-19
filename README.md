@@ -1,4 +1,4 @@
-# tech221_mongo
+# MongoDB
 
 ## Configuring multiple VMs
 
