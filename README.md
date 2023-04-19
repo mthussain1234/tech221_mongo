@@ -20,4 +20,19 @@
 ![image](https://user-images.githubusercontent.com/129314018/233080546-31bf9e27-b906-4430-aa66-6327a814e229.png)
 
 
+### Provisioning MongoDB
+
+![image](https://user-images.githubusercontent.com/129314018/233094287-e5cf3ddd-b902-43fb-aac9-1a533f548183.png)
+![image](https://user-images.githubusercontent.com/129314018/233094384-83e73626-2d8d-48de-ace2-bbc29c83d0cb.png)
+
+After `cd` into our folder where the vagrantfile is located, we run `vagrant up db` to load our db virtual machine with our preconfigured shell script to install mongodb.
+
+We then `vagrant ssh db` in our gitbash terminal, and once we are in, we do `sudo systemctl status mongod` to see if 
+the installation of MongoDB has in fact been automated.
+
+![image](https://user-images.githubusercontent.com/129314018/233095426-ced6b426-b2ee-4167-9388-e4a26c8e06fc.png)
+
+
+
+
 
